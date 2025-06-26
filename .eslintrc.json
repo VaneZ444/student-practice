@@ -1,0 +1,136 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true,
+    "es2017": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "react-app",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking"
+  ],
+  "ignorePatterns": [
+    "*.d.ts",
+    ".eslintrc.js",
+    ".prettier.js",
+    "configs/**/*.js",
+    "configs/**/*.ts"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.eslint.json",
+    "tsconfigRootDir": "."
+  },
+  "plugins": ["@typescript-eslint", "simple-import-sort", "react-hooks"],
+  "rules": {
+    "linebreak-style": 0,
+    "arrow-body-style": [0, "always"],
+    "import/no-default-export": 0,
+    "import/prefer-default-export": 0,
+    // "import/no-cycle" oчень, долго выполняется, 34 секунды из 65.
+    // Большинство циклических зависимостей вебпак нормально переваривает к тому же.
+    "import/no-cycle": 0,
+    "no-underscore-dangle": 0,
+    "lines-between-class-members": "off",
+    "@typescript-eslint/lines-between-class-members": [
+      "error",
+      {
+        "exceptAfterOverload": true
+      }
+    ],
+    "react/prop-types": 0,
+    "react/jsx-curly-brace-presence": 0,
+    "react/jsx-props-no-spreading": 0,
+    "react/jsx-one-expression-per-line": 0,
+    "@typescript-eslint/class-name-casing": 0,
+    "react/destructuring-assignment": 0,
+    "@typescript-eslint/interface-name-prefix": 0,
+    "react/state-in-constructor": 0,
+    "@typescript-eslint/no-non-null-assertion": 0,
+    "@typescript-eslint/explicit-function-return-type": 0,
+    "@typescript-eslint/unbound-method": 0,
+    "react/static-property-placement": 0,
+    "react/sort-comp": 0,
+    "simple-import-sort/imports": [
+      "error",
+      {
+        "groups": [
+          ["^react", "lodash", "^\\w", "^@?\\w"],
+          ["./services/^(types).", "./utils/^(types).", "./utils", "./actions"],
+          ["^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$"],
+          ["./constants/."],
+          ["./definitions/.", "./types"],
+          ["^.+\\.svg", "^.+\\.png$", "^.+\\.jpg", "^.+\\.s?css$"]
+        ]
+      }
+    ],
+    "@typescript-eslint/no-use-before-define": [
+      "warn",
+      {
+        "functions": false,
+        "classes": false,
+        "variables": false,
+        "typedefs": false
+      }
+    ],
+    // TODO: Доработать правила по неймингу, префиксам и т.д. Смотреть тут: https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/docs/rules/naming-convention.md
+    "@typescript-eslint/naming-convention": [
+      "error",
+      {
+        "selector": ["variable", "function"],
+        "format": ["PascalCase", "camelCase"],
+        "leadingUnderscore": "allow"
+      },
+      {
+        "selector": ["parameter"],
+        "format": ["camelCase", "PascalCase"],
+        "leadingUnderscore": "allowSingleOrDouble"
+      },
+      {
+        "selector": "variable",
+        "modifiers": ["const"],
+        "format": ["UPPER_CASE", "PascalCase", "camelCase"],
+        "leadingUnderscore": "allow"
+      }
+    ],
+    // Нужна для нормальной обработки сабмита формы когда в onClick прокидываем сразу сабмит формы.Я
+    "@typescript-eslint/no-misused-promises": 0,
+    // Для надежности можно поправить все ошибки и включить правило.
+    "@typescript-eslint/restrict-template-expressions": 0,
+    // По хорошему тоже надо включить. Но слишком много ошибок.
+    "@typescript-eslint/no-non-null-asserted-optional-chain": 0,
+    // С этим правилом, что-то не так, надо разобраться. Ругается там где ошибок быть не должно.
+    "@typescript-eslint/no-unsafe-call": 0,
+
+    // TODO: Убрать игнорирование ошибок и исправить
+    "@typescript-eslint/no-unsafe-assignment": 0,
+    "@typescript-eslint/no-floating-promises": 0,
+    "@typescript-eslint/no-unsafe-member-access": 0,
+    "@typescript-eslint/no-unsafe-argument": 0,
+    "@typescript-eslint/ban-types": 0,
+    "@typescript-eslint/no-unnecessary-type-constraint": 0,
+    "@typescript-eslint/no-unsafe-return": 0,
+    "@typescript-eslint/padding-line-between-statements": [
+      "error",
+      { "blankLine": "always", "prev": "block-like", "next": "*" },
+      { "blankLine": "always", "prev": "*", "next": "block-like" },
+      { "blankLine": "any", "prev": "*", "next": "case" },
+      { "blankLine": "any", "prev": "*", "next": "default" }
+    ],
+    "curly": 1,
+    "@typescript-eslint/require-await": 0
+  },
+  "settings": {
+    "import/resolver": {
+      "alias": {
+        "map": [
+          ["@ui", "./src/ui"],
+          ["@ui/icons", "./src/ui/icons"]
+        ],
+        "extensions": [".ts", ".tsx", ".js", ".jsx", ".json"]
+      }
+    }
+  }
+}
