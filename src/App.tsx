@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import './App.css';
 import {createBrowserRouter,} from "react-router-dom";
 import {Flex, Layout} from 'antd';
@@ -14,6 +14,13 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
+
+    const [state, setState] = React.useState(0);
+
+    useEffect(() => {
+        console.log(state);
+    }, []);
+
     return (
         <Flex>
             <Layout>
