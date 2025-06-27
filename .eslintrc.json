@@ -26,7 +26,8 @@
   "plugins": [
     "@typescript-eslint",
     "simple-import-sort",
-    "react"
+    "react",
+    "react-hooks"
   ],
   "rules": {
     "linebreak-style": 0,
@@ -34,7 +35,6 @@
       0,
       "always"
     ],
-    "rea": "warn",
     "import/no-default-export": 0,
     "import/prefer-default-export": 0,
     "import/no-cycle": 0,
@@ -42,12 +42,6 @@
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
     "lines-between-class-members": "off",
-    "@typescript-eslint/lines-between-class-members": [
-      "error",
-      {
-        "exceptAfterOverload": true
-      }
-    ],
     "react/prop-types": 0,
     "react/jsx-curly-brace-presence": 0,
     "react/jsx-props-no-spreading": 0,
@@ -120,29 +114,6 @@
     "@typescript-eslint/ban-types": 0,
     "@typescript-eslint/no-unnecessary-type-constraint": 0,
     "@typescript-eslint/no-unsafe-return": 0,
-    "@typescript-eslint/padding-line-between-statements": [
-      "error",
-      {
-        "blankLine": "always",
-        "prev": "block-like",
-        "next": "*"
-      },
-      {
-        "blankLine": "always",
-        "prev": "*",
-        "next": "block-like"
-      },
-      {
-        "blankLine": "any",
-        "prev": "*",
-        "next": "case"
-      },
-      {
-        "blankLine": "any",
-        "prev": "*",
-        "next": "default"
-      }
-    ],
     "curly": 1
   }
 }
