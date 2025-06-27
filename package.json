@@ -2,7 +2,7 @@
   "name": "student-practice",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://VladislavDan.github.io/student-practice",
+  "homepage": "https://vladislavdan.github.io/student-practice",
   "dependencies": {
     "@types/jest": "^27.5.2",
     "@types/node": "^16.18.126",
