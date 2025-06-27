@@ -1,7 +1,7 @@
 import './App.css';
 
 import {Flex, Layout} from 'antd';
-import React, {useEffect} from 'react';
+import React from 'react';
 import {RouterProvider} from "react-router";
 import {createBrowserRouter,} from "react-router-dom";
 
@@ -15,12 +15,6 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-
-    const [state] = React.useState(0);
-
-    useEffect(() => {
-        console.log(state);
-    }, []);
 
     return (
         <Flex>
