@@ -1,40 +1,13 @@
-import React, {useEffect} from 'react';
-import './App.css';
-import {createBrowserRouter,} from "react-router-dom";
-import {Flex, Layout} from 'antd';
-import {RouterProvider} from "react-router";
+import { BrowserRouter } from 'react-router-dom';
 
-const {Header, Footer, Sider, Content} = Layout;
+import { AppLayout } from './components/AppLayout';
 
-const router = createBrowserRouter([
-    {
-        path: "/",
-        element: <div></div>,
-    },
-]);
-
-function App() {
-
-    const [state, setState] = React.useState(0);
-
-    useEffect(() => {
-        console.log(state);
-    }, []);
-
-    return (
-        <Flex>
-            <Layout>
-                <Sider width="25%">
-                    <Layout>
-                        <Header>CyberSportsPortal</Header>
-                    </Layout>
-                </Sider>
-                <Layout>
-                    <Content><RouterProvider router={router}/></Content>
-                </Layout>
-            </Layout>
-        </Flex>
-    );
-}
+const App = () => {
+  return (
+    <BrowserRouter>
+      <AppLayout />
+    </BrowserRouter>
+  );
+};
 
 export default App;
