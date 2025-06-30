@@ -7,6 +7,7 @@ import { PlayersPage } from '../../pages/players';
 import { RatingPage } from '../../pages/rating';
 import { TeamsPage } from '../../pages/teams';
 import { TeamCardPage } from '../../pages/teams/teamCard';
+import { TournamentInfoPage } from '../../pages/tournamentInfo';
 import { TournamentsPage } from '../../pages/tournaments';
 import { AppMenu } from '../AppMenu';
 
@@ -29,6 +30,7 @@ export const AppLayout = () => {
             <Route path="teams" element={<TeamsPage />} />
             <Route path="/teams/:id" element={<TeamCardPage />} />
             <Route path="tournaments" element={<TournamentsPage />} />
+            <Route path="tournaments/:id" element={<TournamentInfoPage />} />
             <Route path="players" element={<PlayersPage />} />
             <Route path="rating" element={<RatingPage />} />
           </Routes>
