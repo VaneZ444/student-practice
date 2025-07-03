@@ -1,10 +1,8 @@
 import {Button, Modal, Table, Tag, Typography} from 'antd';
 import type {ColumnsType} from 'antd/es/table';
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import {useNavigate} from 'react-router-dom';
 
-import {useFetch} from "../../hooks/useFetch";
-import {ITournament} from "../../pages/tournaments/types/ITournament";
 import {statusMap, tournamentsDataMok} from './constants';
 import {Prize, TournamentMok, TournamentStatus} from './types';
 
@@ -13,11 +11,11 @@ export const TournamentsTable: React.FC = () => {
     const [currentPrizes, setCurrentPrizes] = useState<Prize[]>([]);
     const navigate = useNavigate();
 
-    const {request} = useFetch<ITournament>({url: '/api/Tournaments/last'});
-
-    useEffect(() => {
-        request();
-    }, [request])
+    // const {request} = useFetch<ITournament>({url: '/api/Tournaments/last'});
+    //
+    // useEffect(() => {
+    //     request();
+    // }, [request])
 
     const showPrizes = (tournamentId: number) => {
         const tournament = tournamentsDataMok.find((t) => t.id === tournamentId);
