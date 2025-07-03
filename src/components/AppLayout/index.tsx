@@ -2,7 +2,7 @@ import {Layout, Typography} from 'antd';
 import Sider from 'antd/es/layout/Sider';
 import {Navigate, Route, Routes} from 'react-router';
 
-import {MainPage} from '../../pages/main';
+import {MainPage} from '../../pages/main/Main';
 import {PlayersPage} from '../../pages/players';
 import {RatingPage} from '../../pages/rating';
 import {TeamsPage} from '../../pages/teams';
@@ -33,7 +33,7 @@ export const AppLayout = () => {
                         <Route path="/tournaments/:id" element={<TournamentInfoPage/>}/>
                         <Route path="/players" element={<PlayersPage/>}/>
                         <Route path="/rating" element={<RatingPage/>}/>
-                        <Route path="/*" element={<Navigate to=""/>}/>
+                        <Route path="/" element={<Navigate to="/main"/>}/>
                     </Routes>
                 </Layout.Content>
             </Layout>
